@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - A package for reading/writing Kolab data formats
 Name:		php-horde-Horde_Kolab_Format
-Version:	1.0.0
+Version:	1.0.1
 Release:	1
 License:	LGPL 2.1
 Group:		Development/Languages/PHP
 Source0:	http://pear.horde.org/get/%{pearname}-%{version}.tgz
-# Source0-md5:	2db2e4f2a313aa949f44c78e0ae79fa2
+# Source0-md5:	7c79d606b0deef076f31f5af0237abe1
 URL:		http://pear.horde.org/package/Horde_Kolab_Format/
 BuildRequires:	php-channel(pear.horde.org)
 BuildRequires:	php-packagexml2cl
@@ -34,17 +34,16 @@ In PEAR status of this package is: %{status}.
 %prep
 %pear_package_setup
 
-mv docs/Horde_Kolab_Format/Horde/Kolab/Format examples
-
-mv .%{php_pear_dir}/data/Horde_Kolab_Format/TODO .
+mv docs/Horde_Kolab_Format/examples .
+mv docs/Horde_Kolab_Format/TODO .
+mv docs/Horde_Kolab_Format/usage.txt .
 
 %build
 packagexml2cl package.xml > ChangeLog
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{php_pear_dir}}
-install -p ./%{_bindir}/* $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
@@ -56,10 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog install.log
-%doc TODO
-%doc docs/Horde_Kolab_Format/*
+%doc TODO usage.txt
 %{php_pear_dir}/.registry/.channel.*/*.reg
-%attr(755,root,root) %{_bindir}/kolab-format
 %{php_pear_dir}/Horde/Kolab/Format
 %{php_pear_dir}/Horde/Kolab/Format.php
 %{_examplesdir}/%{name}-%{version}
