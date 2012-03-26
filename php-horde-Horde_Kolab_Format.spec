@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - A package for reading/writing Kolab data formats
 Name:		php-horde-Horde_Kolab_Format
-Version:	1.0.1
+Version:	1.1.1
 Release:	1
 License:	LGPL 2.1
 Group:		Development/Languages/PHP
 Source0:	http://pear.horde.org/get/%{pearname}-%{version}.tgz
-# Source0-md5:	7c79d606b0deef076f31f5af0237abe1
+# Source0-md5:	98570608b29df9b095f679eadebe00e8
 URL:		http://pear.horde.org/package/Horde_Kolab_Format/
 BuildRequires:	php-channel(pear.horde.org)
 BuildRequires:	php-packagexml2cl
