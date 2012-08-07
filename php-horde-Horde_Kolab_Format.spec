@@ -4,7 +4,7 @@
 Summary:	%{pearname} - A package for reading/writing Kolab data formats
 Name:		php-horde-Horde_Kolab_Format
 Version:	1.1.2
-Release:	1
+Release:	2
 License:	LGPL 2.1
 Group:		Development/Languages/PHP
 Source0:	http://pear.horde.org/get/%{pearname}-%{version}.tgz
@@ -15,8 +15,8 @@ BuildRequires:	php-packagexml2cl
 BuildRequires:	php-pear-PEAR >= 1:1.7.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
+Requires:	php(dom)
 Requires:	php-channel(pear.horde.org)
-Requires:	php-dom
 Requires:	php-horde-Horde_Exception < 2.0.0
 Requires:	php-pear
 Suggests:	php-horde-Horde_Date
