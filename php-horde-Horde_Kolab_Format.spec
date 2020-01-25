@@ -1,6 +1,5 @@
 %define		status		stable
 %define		pearname	Horde_Kolab_Format
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - A package for reading/writing Kolab data formats
 Name:		php-horde-Horde_Kolab_Format
 Version:	1.1.2
